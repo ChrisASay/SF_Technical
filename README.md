@@ -1,4 +1,4 @@
-# Ubuntu Secure VM Deployment with Terraform & Ansible
+# Ubuntu Secure VM Deployment with Terraform and Ansible, on vSphere
 
 Automated deployment of Ubuntu Server VM on vSphere, with two NICs:
 - External interface (178.156.133.99): SSH & Apache
