@@ -8,7 +8,7 @@
 
 Directory Structure Example:
 
-my-terraform-project/
+```my-terraform-project/
 ├── main.tf
 ├── variables.tf
 ├── terraform.tfvars
@@ -16,7 +16,7 @@ my-terraform-project/
 └── modules/
     ├── module1/
     └── module2/
-
+```
 By placing terraform.tfvars in the root directory, Terraform will automatically detect and apply the variable values during execution.
 
 2. Run:
