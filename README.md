@@ -54,7 +54,7 @@ terraform init
 terraform apply
 ```
 
-This will create a VM named `ubuntu-secured` with the specified network interfaces and cloud-init settings.
+This will create a VM named `ubuntu-secured` with the specified network interfaces and on-prem settings.
 
 ### 3. Configure the Server with Ansible
 
