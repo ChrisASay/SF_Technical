@@ -1,0 +1,18 @@
+vsphere_user     = "administrator@vsphere.local"
+vsphere_password = "yourpassword"
+vsphere_server   = "vcenter.example.com"
+
+datacenter       = "DC1"
+datastore        = "Datastore1"
+cluster          = "Cluster1"
+
+external_network = "VM Network External"
+internal_network = "VLAN150"
+
+template         = "ubuntu-22.04-template"
+
+vm_name          = "ubuntu-secure"
+
+external_ip      = "178.156.133.99"
+internal_ip      = "10.200.16.101"
+gateway          = "178.156.133.1"

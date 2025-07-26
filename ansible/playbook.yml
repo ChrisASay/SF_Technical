@@ -1,0 +1,8 @@
+---
+- name: Configure and Harden Ubuntu VM
+  hosts: ubuntu
+  become: yes
+  roles:
+    - sshserver
+    - webserver
+    - harden

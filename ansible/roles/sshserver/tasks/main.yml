@@ -1,0 +1,24 @@
+- name: Install SSH server
+  apt:
+    name: openssh-server
+    state: present
+    update_cache: yes
+
+- name: Restrict SSH to external interface
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?ListenAddress'
+    line: 'ListenAddress {{ ansible_default_ipv4.address }}'
+    backrefs: yes
+
+- name: Disable root login and password auth
+  blockinfile:
+    path: /etc/ssh/sshd_config
+    block: |
+      PermitRootLogin no
+      PasswordAuthentication no
+
+- name: Restart SSH
+  service:
+    name: ssh
+    state: restarted

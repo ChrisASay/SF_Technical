@@ -1,0 +1,16 @@
+- name: Install Apache
+  apt:
+    name: apache2
+    state: present
+    update_cache: yes
+
+- name: Bind Apache to external interface only
+  lineinfile:
+    path: /etc/apache2/ports.conf
+    regexp: '^Listen'
+    line: 'Listen {{ ansible_default_ipv4.address }}:80'
+
+- name: Restart Apache
+  service:
+    name: apache2
+    state: restarted
