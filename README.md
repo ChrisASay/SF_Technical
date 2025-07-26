@@ -2,21 +2,21 @@
 
 ## Project Overview
 
-This project automates the deployment and secure configuration of an Ubuntu server running on a Proxmox virtualization environment. It uses:
+This project automates the deployment and secure configuration of an Ubuntu server running on a vSphere virtualization environment. It uses:
 
-- **Terraform** to provision the Ubuntu VM with two network interfaces:
-  - An **external interface** with a public IP (`178.156.133.99`) exposed to the internet.
-  - An **internal VLAN-tagged interface** (VLAN ID 150) connected to an internal device subnet (`10.200.16.100/29`) that requires TCP port 9000 access.
+- Terraform to provision the Ubuntu VM with two network interfaces:
+  - An external interface with a public IP (`178.156.133.99`) exposed to the internet.
+  - An internal VLAN-tagged interface (VLAN ID 150) connected to an internal device subnet (`10.200.16.100/29`) that requires TCP port 9000 access.
 
-- **Ansible** to configure and harden the server by:
+- Ansible to configure and harden the server by:
   - Installing and configuring an SSH server and a web server (Apache), both bound exclusively to the external interface.
   - Implementing firewall rules with UFW that restrict access: only allowing SSH (22) and HTTP (80) on the external interface, and allowing TCP port 9000 only from the internal device subnet.
   - Disabling root SSH login for enhanced security.
 
 ### Project Goals
 
-- Automate **repeatable**, consistent provisioning of Ubuntu server instances on Proxmox.
-- Ensure the server is **secure by default** with limited network exposure.
+- To automate a repeatable, consistent provisioning of Ubuntu server instances on vSphere.
+- Ensure the server is secure by default with limited network exposure.
 - Separate internal and external traffic using VLAN tagging and interface binding.
 - Enable controlled access for internal devices to specific ports (9000 TCP).
 
@@ -24,9 +24,9 @@ This project automates the deployment and secure configuration of an Ubuntu serv
 
 ## Prerequisites
 
-- A Proxmox VE environment with API access enabled.
-- A cloud-init enabled Ubuntu template uploaded to Proxmox.
-- Terraform installed (with the Proxmox provider plugin).
+- A vSphere environment .
+- A cloud-init enabled Ubuntu template uploaded to vSphere.
+- Terraform installed (with the vSphere provider plugin).
 - Ansible installed on your control machine.
 - SSH private key for authentication (`~/.ssh/id_rsa`).
 
@@ -76,13 +76,13 @@ ansible-playbook -i inventory.ini site.yml
 - **Internal network VLAN tagging**: The internal interface is configured with VLAN ID 150 and connects to a subnet that can access the server on TCP port 9000.
 - **Firewall rules** can be expanded or modified in the Ansible `hardening` role.
 - You can add monitoring, SSL, fail2ban, or other security enhancements by extending the Ansible roles.
-- Ensure the Proxmox node name, bridges (`vmbr0`, `vmbr1`), and subnet details match your environment.
+- Ensure the vSphere node name, bridges (`vmbr0`, `vmbr1`), and subnet details match your environment.
 
 ---
 
 ## Summary
 
-This project provides a solid foundation for automated, secure Ubuntu server deployments on Proxmox using modern infrastructure-as-code tools. It ensures network segmentation, service binding, and firewall hardening to minimize attack surfaces while allowing necessary access.
+This project provides a solid foundation for automated, secure Ubuntu server deployments on vSphere using modern infrastructure-as-code tools. It ensures network segmentation, service binding, and firewall hardening to minimize attack surfaces while allowing necessary access.
 
 ---
 
