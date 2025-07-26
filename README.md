@@ -83,7 +83,3 @@ ansible-playbook -i inventory.ini site.yml
 ## Summary
 
 This project provides a solid foundation for automated, secure Ubuntu server deployments on vSphere using modern infrastructure-as-code tools. It ensures network segmentation, service binding, and firewall hardening to minimize attack surfaces while allowing necessary access.
-
----
-
-If you need any help customizing or expanding this automation, feel free to reach out!
