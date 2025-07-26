@@ -76,7 +76,7 @@ ansible-playbook -i inventory.ini site.yml
 - **Internal network VLAN tagging**: The internal interface is configured with VLAN ID 150 and connects to a subnet that can access the server on TCP port 9000.
 - **Firewall rules** can be expanded or modified in the Ansible `hardening` role.
 - You can add monitoring, SSL, fail2ban, or other security enhancements by extending the Ansible roles.
-- Ensure the vSphere node name, bridges (`vmbr0`, `vmbr1`), and subnet details match your environment.
+- Ensure the vSphere node name, vSphere site name, and subnet details match your environment.
 
 ---
 
