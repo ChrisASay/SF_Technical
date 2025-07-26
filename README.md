@@ -6,7 +6,7 @@ Automated deployment of Ubuntu Server VM on vSphere, with two NICs:
 
 ## Includes
 - Terraform for VM creation
-- Ansible for configuration & hardening
+- Ansible for configuration AND hardening
 - UFW firewall setup
 
 ## Usage
