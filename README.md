@@ -25,7 +25,7 @@ This project automates the deployment and secure configuration of an Ubuntu serv
 ## Prerequisites
 
 - A vSphere environment .
-- A cloud-init enabled Ubuntu template uploaded to vSphere.
+- An on-prem enabled Ubuntu template uploaded to vSphere.
 - Terraform installed (with the vSphere provider plugin).
 - Ansible installed on your control machine.
 - SSH private key for authentication (`~/.ssh/id_rsa`).
