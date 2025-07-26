@@ -1,7 +1,7 @@
 # Terraform Setup for Ubuntu Secure VM
 
 ## Steps
-1. Copy `terraform.tfvars.example` → `terraform.tfvars` and fill in:
+1. Copy `terraform.tfvars.example` → `terraform.tfvars` move it onto the root directory, and then fill in:
    - vSphere credentials
    - Datacenter, network names
    - IP and gateway values
