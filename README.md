@@ -36,12 +36,12 @@ This project automates the deployment and secure configuration of an Ubuntu serv
 
 ### 1. Configure Terraform Variables
 
-Edit `terraform/terraform.tfvars` and set your Proxmox API URL, username, and password:
+Edit `terraform/terraform.tfvars` and set your vSphere username, password, and server URI:
 
 ```hcl
-pm_api_url = "https://proxmox.local:8006/api2/json"
-pm_user    = "root@pam"
-pm_password = "yourpassword"
+vsphere_user     = "administrator@vsphere.local"
+vsphere_password = "yourpassword"
+vsphere_server   = "vcenter.example.com"
 ```
 
 ### 2. Deploy the Ubuntu VM
